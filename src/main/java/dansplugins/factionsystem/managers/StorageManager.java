@@ -26,6 +26,7 @@ public class StorageManager {
     private final static String PLAYERPOWER_FILE_NAME = "playerpowerrecords.json";
     private final static String PLAYERACTIVITY_FILE_NAME = "playeractivityrecords.json";
     private final static String LOCKED_BLOCKS_FILE_NAME = "lockedblocks.json";
+    private final static String DESIGNATED_WORLDS_FILE_NAME = "designatedworlds.json";
 
     private final static Type LIST_MAP_TYPE = new TypeToken<ArrayList<HashMap<String, String>>>(){}.getType();
 
@@ -103,6 +104,13 @@ public class StorageManager {
 
         File file = new File(FILE_PATH + LOCKED_BLOCKS_FILE_NAME);
         writeOutFiles(file, lockedBlocks);
+    }
+
+    private void saveDesignatedWorlds() {
+        List<String> designatedWorlds = PersistentData.getInstance().getDesignatedWorlds().save();
+
+        File file = new File(FILE_PATH + DESIGNATED_WORLDS_FILE_NAME);
+        writeOutFiles(file, designatedWorlds);
     }
 
     private void writeOutFiles(File file, List<Map<String, String>> saveData) {

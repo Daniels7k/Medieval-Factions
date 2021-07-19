@@ -21,6 +21,7 @@ public class PersistentData {
     public ArrayList<PlayerPowerRecord> playerPowerRecords = new ArrayList<>();
     public ArrayList<PlayerActivityRecord> playerActivityRecords = new ArrayList<>();
     public ArrayList<LockedBlock> lockedBlocks = new ArrayList<>();
+    public DesignatedWorlds designatedWorlds = new DesignatedWorlds();
 
     private PersistentData() {}
 
@@ -31,7 +32,7 @@ public class PersistentData {
         return instance;
     }
 
-    // arraylist getters ---
+    // getters ---
 
     public ArrayList<Faction> getFactions() {
         return factions;
@@ -51,6 +52,10 @@ public class PersistentData {
 
     public ArrayList<LockedBlock> getLockedBlocks() {
         return lockedBlocks;
+    }
+
+    public DesignatedWorlds getDesignatedWorlds() {
+        return designatedWorlds;
     }
 
     // specific getters ---
